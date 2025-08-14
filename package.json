@@ -1,0 +1,22 @@
+{
+  "name": "streaksmith",
+  "version": "1.0.0",
+  "description": "A delightful CLI habit tracker with visual terminal experience",
+  "main": "src/index.js",
+  "bin": {
+    "streaksmith": "./bin/streaksmith.js"
+  },
+  "scripts": {
+    "start": "node bin/streaksmith.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["cli", "habits", "tracker", "productivity", "terminal"],
+  "author": "StreakSmith",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.0.0",
+    "chalk": "^4.1.2",
+    "date-fns": "^2.30.0",
+    "uuid": "^9.0.0"
+  }
+}
