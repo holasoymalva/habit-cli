@@ -7,12 +7,23 @@
     "habit-cli": "./bin/habit-cli.js"
   },
   "scripts": {
-    "start": "node bin/streaksmith.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node bin/habit-cli.js",
+    "dev": "node bin/habit-cli.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"No linter configured yet\"",
+    "prepublishOnly": "npm test"
   },
   "keywords": ["cli", "habits", "tracker", "productivity", "terminal"],
-  "author": "StreakSmith",
+  "author": "holasoymalva",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holasoymalva/habit-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/holasoymalva/habit-cli/issues"
+  },
+  "homepage": "https://github.com/holasoymalva/habit-cli#readme",
   "dependencies": {
     "commander": "^11.0.0",
     "chalk": "^4.1.2",

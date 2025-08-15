@@ -7,11 +7,13 @@
 [![npm version](https://img.shields.io/npm/v/habit-cli.svg?style=flat-square)](https://www.npmjs.com/package/habit-cli)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/node/v/habit-cli.svg?style=flat-square)](https://nodejs.org)
-[![Build Status](https://img.shields.io/github/workflow/status/username/habit-cli/CI?style=flat-square)](https://github.com/username/habit-cli/actions)
+[![Build Status](https://img.shields.io/github/workflow/status/holasoymalva/habit-cli/CI?style=flat-square)](https://github.com/holasoymalva/habit-cli/actions)
 
 *Track your habits. Build your streaks. Transform your life.*
 
 [Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Contributing](#-contributing)
+
+![Habit-CLI Demo](https://raw.githubusercontent.com/holasoymalva/habit-cli/main/assets/demo.gif)
 
 </div>
 
@@ -54,7 +56,7 @@ npm install -g habit-cli
 
 ### Local Development
 ```bash
-git clone https://github.com/username/habit-cli.git
+git clone https://github.com/holasoymalva/habit-cli.git
 cd habit-cli
 npm install
 npm link
@@ -244,7 +246,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ### Development Setup
 ```bash
-git clone https://github.com/username/habit-cli.git
+git clone https://github.com/holasoymalva/habit-cli.git
 cd habit-cli
 npm install
 npm run dev
@@ -275,7 +277,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**[⭐ Star this project](https://github.com/username/habit-cli)** if you find it useful!
+**[⭐ Star this project](https://github.com/holasoymalva/habit-cli)** if you find it useful!
 
 Made with ❤️ by developers, for developers.
 
