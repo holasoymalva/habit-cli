@@ -13,7 +13,7 @@
 
 [Features](#-features) • [Installation](#-installation) • [Quick Start](#-quick-start) • [Documentation](#-documentation) • [Contributing](#-contributing)
 
-![Habit-CLI Demo](https://raw.githubusercontent.com/holasoymalva/habit-cli/main/assets/demo.gif)
+<img width="462" height="137" alt="image" src="https://github.com/user-attachments/assets/0c1b8d97-83bb-46f8-9f79-10a635f18408" />
 
 </div>
 
