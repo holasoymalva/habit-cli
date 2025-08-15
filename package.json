@@ -1,10 +1,10 @@
 {
-  "name": "streaksmith",
+  "name": "habit-cli",
   "version": "1.0.0",
   "description": "A delightful CLI habit tracker with visual terminal experience",
   "main": "src/index.js",
   "bin": {
-    "streaksmith": "./bin/streaksmith.js"
+    "habit-cli": "./bin/habit-cli.js"
   },
   "scripts": {
     "start": "node bin/streaksmith.js",
@@ -17,6 +17,8 @@
     "commander": "^11.0.0",
     "chalk": "^4.1.2",
     "date-fns": "^2.30.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "boxen": "^5.1.2",
+    "cli-table3": "^0.6.3"
   }
 }

@@ -1,49 +1,69 @@
 const { HabitRepository } = require('../data/repository');
+const { StreakCalculator } = require('../utils/streaks');
 const { OutputFormatter } = require('../utils/output');
+const { Branding } = require('../utils/branding');
 const { format } = require('date-fns');
+const chalk = require('chalk');
 
 function todayCommand() {
   try {
     const repo = new HabitRepository();
-    const todayStatus = repo.getTodayStatus();
+    const streakCalc = new StreakCalculator(repo);
+    const allStreaks = streakCalc.getAllStreaks();
     const today = format(new Date(), 'EEEE, MMMM do, yyyy');
     
-    OutputFormatter.header(`Today - ${today}`);
+    // Show compact logo
+    console.log(Branding.getCompactLogo());
     console.log('');
     
-    if (todayStatus.length === 0) {
+    if (allStreaks.length === 0) {
       OutputFormatter.info('No habits found.');
       OutputFormatter.dim('Add your first habit with:');
-      OutputFormatter.dim('  streaksmith add "Your Habit Name"');
+      OutputFormatter.dim('  habit-cli add "Your Habit Name"');
       return;
     }
 
-    const completed = todayStatus.filter(h => h.completed).length;
-    const total = todayStatus.length;
+    const completed = allStreaks.filter(h => h.completed).length;
+    const total = allStreaks.length;
     
-    // Show progress summary
-    const progressPercent = Math.round((completed / total) * 100);
-    const progressBar = '█'.repeat(Math.floor(progressPercent / 10)) + 
-                       '░'.repeat(10 - Math.floor(progressPercent / 10));
+    // Progress section
+    const progressBar = OutputFormatter.createProgressBar(completed, total, 25);
+    const progressContent = [
+      `${today}`,
+      '',
+      `Progress: ${completed}/${total} habits completed`,
+      progressBar
+    ].join('\n');
     
-    console.log(`  Progress: ${completed}/${total} (${progressPercent}%)`);
-    console.log(`  [${progressBar}]`);
-    console.log('');
+    console.log(Branding.createProgressBox('📅 Today\'s Progress', progressContent));
     
-    // Show habits
-    OutputFormatter.subheader('Habits:');
-    todayStatus.forEach(habit => {
-      console.log(`  ${OutputFormatter.habit(habit.name, habit.completed)}`);
+    // Habits section
+    let habitsContent = '';
+    allStreaks.forEach((habit, index) => {
+      habitsContent += OutputFormatter.habitWithStreak(
+        habit.name, 
+        habit.completed, 
+        habit.currentStreak, 
+        habit.longestStreak
+      );
+      if (index < allStreaks.length - 1) habitsContent += '\n';
     });
     
     console.log('');
+    console.log(Branding.createBox(habitsContent, '✅ Today\'s Habits'));
     
-    // Show next actions
-    const remaining = todayStatus.filter(h => !h.completed);
+    // Summary and motivation
+    console.log('');
+    const remaining = allStreaks.filter(h => !h.completed);
+    const activeStreaks = allStreaks.filter(h => h.currentStreak > 0).length;
+    
     if (remaining.length > 0) {
-      OutputFormatter.dim(`${remaining.length} habit${remaining.length > 1 ? 's' : ''} remaining for today.`);
+      OutputFormatter.dim(`${remaining.length} habit${remaining.length > 1 ? 's' : ''} remaining • ${activeStreaks} active streak${activeStreaks !== 1 ? 's' : ''}`);
     } else {
-      OutputFormatter.success('All habits completed for today! 🎉');
+      OutputFormatter.success('🎉 All habits completed for today! You\'re on fire! 🔥');
+      if (activeStreaks > 0) {
+        OutputFormatter.dim(`${activeStreaks} streak${activeStreaks !== 1 ? 's' : ''} growing strong!`);
+      }
     }
   } catch (error) {
     OutputFormatter.error(`Failed to show today's status: ${error.message}`);

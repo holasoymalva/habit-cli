@@ -8,7 +8,7 @@ function uncheckCommand(habitName) {
     
     if (!habit) {
       OutputFormatter.error(`Habit not found: "${habitName}"`);
-      OutputFormatter.dim('Use "streaksmith list" to see all habits');
+      OutputFormatter.dim('Use "habit-cli list" to see all habits');
       process.exit(1);
     }
 
@@ -21,7 +21,7 @@ function uncheckCommand(habitName) {
     repo.logCompletion(habit.id, new Date(), false);
     OutputFormatter.success(`Unmarked "${habit.name}" for today.`);
     OutputFormatter.dim('You can mark it complete again with:');
-    OutputFormatter.dim(`  streaksmith check "${habit.name}"`);
+    OutputFormatter.dim(`  habit-cli check "${habit.name}"`);
   } catch (error) {
     OutputFormatter.error(`Failed to uncheck habit: ${error.message}`);
     process.exit(1);

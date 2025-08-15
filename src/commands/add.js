@@ -8,7 +8,7 @@ function addCommand(habitName) {
     
     OutputFormatter.success(`Added habit: "${habit.name}"`);
     OutputFormatter.dim('Mark it complete for today with:');
-    OutputFormatter.dim(`  streaksmith check "${habit.name}"`);
+    OutputFormatter.dim(`  habit-cli check "${habit.name}"`);
   } catch (error) {
     OutputFormatter.error(error.message);
     process.exit(1);

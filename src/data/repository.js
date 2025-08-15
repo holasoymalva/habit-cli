@@ -6,7 +6,7 @@ const { format, parseISO } = require('date-fns');
 
 class HabitRepository {
   constructor() {
-    this.dataDir = path.join(os.homedir(), '.streaksmith');
+    this.dataDir = path.join(os.homedir(), '.habit-cli');
     this.dataFile = path.join(this.dataDir, 'data.json');
     this.ensureDataDirectory();
   }

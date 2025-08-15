@@ -1,4 +1,4 @@
-# StreakSmith
+# Habit-CLI
 
 A delightful CLI habit tracker with visual terminal experience.
 
@@ -16,61 +16,61 @@ npm link
 
 ## Quick Start
 
-1. Initialize StreakSmith:
+1. Initialize Habit-CLI:
 ```bash
-streaksmith init
+habit-cli init
 ```
 
 2. Add your first habit:
 ```bash
-streaksmith add "Morning Exercise"
+habit-cli add "Morning Exercise"
 ```
 
 3. Mark it complete for today:
 ```bash
-streaksmith check "Morning Exercise"
+habit-cli check "Morning Exercise"
 ```
 
 4. See today's progress:
 ```bash
-streaksmith today
+habit-cli today
 ```
 
 ## Commands
 
 ### Core Commands
 
-- `streaksmith init` - Initialize StreakSmith data directory
-- `streaksmith add <habit>` - Add a new habit
-- `streaksmith list` - List all habits
-- `streaksmith check <habit>` - Mark habit as completed for today
-- `streaksmith uncheck <habit>` - Unmark habit for today
-- `streaksmith today` - Show today's habits and completion status
-- `streaksmith help` - Show help information
+- `habit-cli init` - Initialize Habit-CLI data directory
+- `habit-cli add <habit>` - Add a new habit
+- `habit-cli list` - List all habits
+- `habit-cli check <habit>` - Mark habit as completed for today
+- `habit-cli uncheck <habit>` - Unmark habit for today
+- `habit-cli today` - Show today's habits and completion status
+- `habit-cli help` - Show help information
 
 ### Examples
 
 ```bash
 # Add habits
-streaksmith add "Meditate"
-streaksmith add "Read for 30 minutes"
-streaksmith add "Drink 8 glasses of water"
+habit-cli add "Meditate"
+habit-cli add "Read for 30 minutes"
+habit-cli add "Drink 8 glasses of water"
 
 # Check off completed habits
-streaksmith check "Meditate"
-streaksmith check "Read"  # Partial matching works
+habit-cli check "Meditate"
+habit-cli check "Read"  # Partial matching works
 
 # See your progress
-streaksmith today
-streaksmith list
+habit-cli today
+habit-cli list
 
 # Undo a completion
-streaksmith uncheck "Meditate"
+habit-cli uncheck "Meditate"
 ```
 
 ## Data Storage
 
-StreakSmith stores your data locally in `~/.streaksmith/data.json`. Your data never leaves your machine.
+Habit-CLI stores your data locally in `~/.habit-cli/data.json`. Your data never leaves your machine.
 
 ## Phase 1 Features ✅
 
